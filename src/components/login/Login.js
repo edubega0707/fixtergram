@@ -17,7 +17,6 @@ componentWillMount(){
             if(!result.user) return;
             console.log(result.user);
             localStorage.setItem("user", JSON.stringify(result.user));
-            this.props.loginAction(result.user);
             this.props.history.push("/perfil");
         }).catch(function(error){
             console.log(error)
@@ -29,11 +28,17 @@ loginGoogle=()=>{
     firebase.auth().signInWithRedirect(provider);
 }
 
+loginFacebook=()=>{
+    const provider = new firebase.auth.FacebookAuthProvider();
+    firebase.auth().signInWithRedirect(provider);
+}
+
     render(){
         return(
             <div>
                 <LoginDisplay
                 loginGoogle={this.loginGoogle}
+                loginFacebook={this.loginFacebook}
                     />
             </div>
             

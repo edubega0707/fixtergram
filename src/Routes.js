@@ -5,6 +5,7 @@ import {Perro2} from './components/perros/Perro2';
 import Login from './components/login/Login';
 import HomePage from './components/home/HomePage';
 import Perfil from './components/perfil/Perfil';
+import Politicas from './components/login/Politicas';
 
 /*
 <Route path='/perro' component={Perro}/>
@@ -15,7 +16,9 @@ export const Routes=()=>(
         <Route exact path="/" component={HomePage}/>   
         <Route path='/login' component={Login}/>
         <Route path='/perfil' component={Perfil}/>
+        <Route path='/politica-de-privacidad' component={Politicas}/>
         <Route render={()=>(<h2>Error 404</h2>)}/>
+        
 
     </Switch>
 );

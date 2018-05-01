@@ -12,11 +12,14 @@ class Perfil extends Component{
     }
     componentWillMount(){
         let user=localStorage.getItem('user');
+        user=JSON.parse(user)
         if(user){
+
             this.setState({isLogged:true, user})
         }
         else
         {
+
             this.setState({isLogged:false})
             this.props.history.push("/login");
         }
@@ -27,7 +30,7 @@ class Perfil extends Component{
             <div>
                 <PerfilDisplay
                    isLogged={this.props.isLogged}
-                   {...this.props.user}
+                   {...this.state.user}
                 />
             </div>
                  
